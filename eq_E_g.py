@@ -15,11 +15,11 @@ def eq_E_g(t, x, flag, I, U, tau, mu, J, Lambda):
 	S = x[N:2*N]*x[0:N]
 	X = sum(x[0:N])
 
-    # Excitatiory neuron
-	for i in range(N):
-    F[i] = x[i]*(1-x[i])*(-mu[0]*x[i] -I[0] - Lambda*X+ J[i,0:N]*S.flatten(1))
+    	# Excitatiory neuron
+    	for i in range(N):
+    		F[i] = x[i]*(1-x[i])*(-mu[0]*x[i] -I[0] - Lambda*X+ J[i,0:N]*S.flatten(1))
 	
-  F[N:2*N] = (1-x[N:2*N])/tau[0] - U[0]*x[0:N]*x[N:2*N]
+  	F[N:2*N] = (1-x[N:2*N])/tau[0] - U[0]*x[0:N]*x[N:2*N]
 
 	return F
  
